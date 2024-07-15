@@ -16,6 +16,9 @@
 		FA2029632C3D1F820076F28C /* WeatherMamaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2029622C3D1F820076F28C /* WeatherMamaTests.swift */; };
 		FA20296D2C3D1F820076F28C /* WeatherMamaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20296C2C3D1F820076F28C /* WeatherMamaUITests.swift */; };
 		FA20296F2C3D1F820076F28C /* WeatherMamaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20296E2C3D1F820076F28C /* WeatherMamaUITestsLaunchTests.swift */; };
+		FA35D3452C44D3C0001805BB /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D3442C44D3BC001805BB /* HourlyWeather.swift */; };
+		FA35D3472C44D3D7001805BB /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D3462C44D3D3001805BB /* WeatherViewController.swift */; };
+		FA35D3492C44D3F0001805BB /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D3482C44D3EC001805BB /* WeatherFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		FA2029682C3D1F820076F28C /* WeatherMamaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherMamaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA20296C2C3D1F820076F28C /* WeatherMamaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMamaUITests.swift; sourceTree = "<group>"; };
 		FA20296E2C3D1F820076F28C /* WeatherMamaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMamaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA35D3442C44D3BC001805BB /* HourlyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeather.swift; sourceTree = "<group>"; };
+		FA35D3462C44D3D3001805BB /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		FA35D3482C44D3EC001805BB /* WeatherFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,11 @@
 		FA20294A2C3D1F800076F28C /* WeatherMama */ = {
 			isa = PBXGroup;
 			children = (
+				FA35D3432C44D3A9001805BB /* Service */,
+				FA35D3422C44D3A2001805BB /* Controllers */,
+				FA35D3412C44D38E001805BB /* ViewModels */,
+				FA35D3402C44D38A001805BB /* Views */,
+				FA35D33F2C44D37B001805BB /* Models */,
 				FA20294B2C3D1F800076F28C /* AppDelegate.swift */,
 				FA20294D2C3D1F800076F28C /* SceneDelegate.swift */,
 				FA20294F2C3D1F800076F28C /* ViewController.swift */,
@@ -125,6 +136,44 @@
 				FA20296E2C3D1F820076F28C /* WeatherMamaUITestsLaunchTests.swift */,
 			);
 			path = WeatherMamaUITests;
+			sourceTree = "<group>";
+		};
+		FA35D33F2C44D37B001805BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA35D3442C44D3BC001805BB /* HourlyWeather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA35D3402C44D38A001805BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA35D3412C44D38E001805BB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FA35D3422C44D3A2001805BB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA35D3462C44D3D3001805BB /* WeatherViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA35D3432C44D3A9001805BB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA35D3482C44D3EC001805BB /* WeatherFetcher.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA35D3492C44D3F0001805BB /* WeatherFetcher.swift in Sources */,
 				FA2029502C3D1F800076F28C /* ViewController.swift in Sources */,
+				FA35D3472C44D3D7001805BB /* WeatherViewController.swift in Sources */,
+				FA35D3452C44D3C0001805BB /* HourlyWeather.swift in Sources */,
 				FA20294C2C3D1F800076F28C /* AppDelegate.swift in Sources */,
 				FA20294E2C3D1F800076F28C /* SceneDelegate.swift in Sources */,
 			);
@@ -444,11 +496,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMama/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,11 +526,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMama/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

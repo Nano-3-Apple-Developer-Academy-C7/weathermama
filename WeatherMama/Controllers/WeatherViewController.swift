@@ -16,6 +16,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     private let weatherFetcher = WeatherFetcher()
     private let locationManager = CLLocationManager()
     
+    var recommendationTimes: [PotentialWindow] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +38,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         weatherFetcher.fetchHourlyWeather(for: location) { result in
             switch result {
             case .success(let hourlyWeatherData):
+                self.recommendationTimes = self.recommendLaundryTimes(hourlyForecast: hourlyWeatherData)
                 DispatchQueue.main.async {
+                    //TODO: NGOPER DATA KE UI
                     self.weatherLabel.text = self.formatWeatherData(hourlyWeatherData)
                 }
             case .failure(let error):
@@ -49,7 +53,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     private func formatWeatherData(_ data: [HourlyWeatherData]) -> String {
         var result = ""
-        for item in data.prefix(24) { // Limiting to 24 hours
+        for item in data.prefix(24) { 
             result += "Date: \(item.date)\n"
             result += "Temp: \(item.temperature)°C (\(item.temperatureCategory()))\n"
             result += "Humidity: \(item.humidity)% (\(item.humidityCategory()))\n"
@@ -57,6 +61,35 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             result += "Precipitation: \(item.precipitationChance)% (\(item.precipitationCategory()))\n\n"
         }
         return result
+    }
+    
+    private func recommendLaundryTimes(hourlyForecast: [HourlyWeatherData]) -> [PotentialWindow] {
+        var recommendations: [PotentialWindow] = []
+        
+        var potentialWindow: (start: Date, end: Date)?
+        
+        for hourWeather in hourlyForecast {
+            let precipitationProbability = hourWeather.precipitationChance
+            let temperature = hourWeather.temperature
+            let humidity = hourWeather.humidity
+            
+            if precipitationProbability < 0.1 && temperature > 15 && humidity < 70 {
+                if potentialWindow == nil {
+                    potentialWindow = (start: hourWeather.date, end: hourWeather.date)
+                } else {
+                    potentialWindow?.end = hourWeather.date
+                }
+            } else if let window = potentialWindow {
+                recommendations.append(PotentialWindow(startTime: window.start, endTime: window.end))
+                potentialWindow = nil
+            }
+        }
+        
+        if let window = potentialWindow {
+            recommendations.append(PotentialWindow(startTime: window.start, endTime: window.end))
+        }
+        
+        return recommendations
     }
     
     // CLLocationManagerDelegate methods

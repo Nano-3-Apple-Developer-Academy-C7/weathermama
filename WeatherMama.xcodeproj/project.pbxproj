@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D84C7EC2C4523AD0072C488 /* PotentialWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84C7EB2C4523AD0072C488 /* PotentialWindow.swift */; };
 		FA20294C2C3D1F800076F28C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294B2C3D1F800076F28C /* AppDelegate.swift */; };
 		FA20294E2C3D1F800076F28C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294D2C3D1F800076F28C /* SceneDelegate.swift */; };
 		FA2029502C3D1F800076F28C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294F2C3D1F800076F28C /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D84C7EB2C4523AD0072C488 /* PotentialWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialWindow.swift; sourceTree = "<group>"; };
 		FA2029482C3D1F800076F28C /* WeatherMama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA20294B2C3D1F800076F28C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA20294D2C3D1F800076F28C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				FA35D3442C44D3BC001805BB /* HourlyWeather.swift */,
+				1D84C7EB2C4523AD0072C488 /* PotentialWindow.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				FA35D3492C44D3F0001805BB /* WeatherFetcher.swift in Sources */,
 				FA2029502C3D1F800076F28C /* ViewController.swift in Sources */,
 				FA35D3472C44D3D7001805BB /* WeatherViewController.swift in Sources */,
+				1D84C7EC2C4523AD0072C488 /* PotentialWindow.swift in Sources */,
 				FA35D3452C44D3C0001805BB /* HourlyWeather.swift in Sources */,
 				FA20294C2C3D1F800076F28C /* AppDelegate.swift in Sources */,
 				FA20294E2C3D1F800076F28C /* SceneDelegate.swift in Sources */,

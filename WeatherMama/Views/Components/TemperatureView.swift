@@ -33,7 +33,7 @@ class TemperatureView: UIView {
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
         
         let titleLabel = UILabel()
-        titleLabel.text = "TEMPERATURE"
+        titleLabel.text = NSLocalizedString("TEMPERATURE", comment: "TEMPERATURE")
         titleLabel.font = UIFont(name: "SFProRounded-Regular", size: 12)
         titleLabel.textColor = .secondaryLabel
         titleLabel.textAlignment = .center

@@ -49,7 +49,7 @@ class MainBoxContainerView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.text = "HOURLY FORECAST"
+        titleLabel.text = NSLocalizedString("HOURLY FORECAST", comment: "HOURLY FORECAST")
         titleLabel.font = UIFont(name: "SFProRounded-Regular", size: 12)
         titleLabel.textColor = .secondaryLabel
         titleLabel.textAlignment = .left
@@ -60,7 +60,7 @@ class MainBoxContainerView: UIView {
     
     private lazy var secondTitleLabel: UILabel = {
         let secondTitleLabel = UILabel()
-        secondTitleLabel.text = "AT THIS HOUR"
+        secondTitleLabel.text = NSLocalizedString("AT THIS HOUR", comment: "AT THIS HOUR")
         secondTitleLabel.font = UIFont(name: "SFProRounded-Regular", size: 12)
         secondTitleLabel.textColor = .secondaryLabel
         secondTitleLabel.textAlignment = .left

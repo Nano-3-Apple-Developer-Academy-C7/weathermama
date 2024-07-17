@@ -1,0 +1,237 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "AT THIS HOUR" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pada Jam ini"
+          }
+        }
+      }
+    },
+    "BEST TIME:" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu Terbaik"
+          }
+        }
+      }
+    },
+    "High Chance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sangat Mungkin"
+          }
+        }
+      }
+    },
+    "HOURLY FORECAST" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prediksi Per-jam"
+          }
+        }
+      }
+    },
+    "HUMIDITY" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KELEMBAPAN"
+          }
+        }
+      }
+    },
+    "IT WILL RAIN ALL DAY..." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hari ini akan terus hujan"
+          }
+        }
+      }
+    },
+    "Likely" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mungkin"
+          }
+        }
+      }
+    },
+    "Low" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendah"
+          }
+        }
+      }
+    },
+    "Not the best day to dry your clothes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bukan waktu terbaik untuk menjemur pakaianmu"
+          }
+        }
+      }
+    },
+    "Optimal Condition for Quick Drying" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jemuranmu akan kering dengan cepat"
+          }
+        }
+      }
+    },
+    "OPTIMAL CONDITIONS FOR QUICK DRYING!" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jemuranmu akan kering dengan cepat!"
+          }
+        }
+      }
+    },
+    "Perfect day to dry your clothes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hari yang tepat untuk menjemur pakaianmu"
+          }
+        }
+      }
+    },
+    "Perfect day to dry your clothes!" : {
+      "comment" : "Perfect day to dry your clothes!",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hari yang tepat untuk menjemur pakaianmu"
+          }
+        }
+      }
+    },
+    "Possible" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bisa Jadi"
+          }
+        }
+      }
+    },
+    "PRECIPITATION" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "POTENSI HUJAN"
+          }
+        }
+      }
+    },
+    "TEMPERATURE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SUHU"
+          }
+        }
+      }
+    },
+    "THE SUN’S OUT AGAIN!" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matahari akan muncul lagi!"
+          }
+        }
+      }
+    },
+    "TODAY" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hari ini"
+          }
+        }
+      }
+    },
+    "Unable to fetch location" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gagal Mendapat Data Lokasi"
+          }
+        }
+      }
+    },
+    "Unlikely" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aman"
+          }
+        }
+      }
+    },
+    "WIND" : {
+      "comment" : "WIND",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ANGIN"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

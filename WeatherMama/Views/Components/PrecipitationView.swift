@@ -32,7 +32,7 @@ class PrecipitationView: UIView {
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
         
         let titleLabel = UILabel()
-        titleLabel.text = "PRECIPITATION"
+        titleLabel.text = NSLocalizedString("PRECIPITATION", comment: "PRECIPITATION")
         titleLabel.font = UIFont(name: "SFProRounded-Regular", size: 12)
         titleLabel.textColor = .secondaryLabel
         titleLabel.textAlignment = .center
@@ -59,7 +59,7 @@ class PrecipitationView: UIView {
     
     private lazy var precipitationStatusLabel: UILabel = {
         let precipitationStatusLabel = UILabel()
-        precipitationStatusLabel.text = "Low"
+        precipitationStatusLabel.text = NSLocalizedString("Low", comment: "Low")
         precipitationStatusLabel.font = UIFont(name: "SFProRounded-Regular", size: 20)
         precipitationStatusLabel.textColor = .systemMint
         precipitationStatusLabel.textAlignment = .center

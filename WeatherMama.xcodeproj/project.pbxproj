@@ -19,6 +19,7 @@
 		0529EA092C466018003B0B11 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529EA082C466018003B0B11 /* WindView.swift */; };
 		0529EA0B2C466028003B0B11 /* HumidityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529EA0A2C466028003B0B11 /* HumidityView.swift */; };
 		1D84C7EC2C4523AD0072C488 /* PotentialWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84C7EB2C4523AD0072C488 /* PotentialWindow.swift */; };
+		1D84C7F22C47BF8F0072C488 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1D84C7F12C47BF8F0072C488 /* Localizable.xcstrings */; };
 		FA20294C2C3D1F800076F28C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294B2C3D1F800076F28C /* AppDelegate.swift */; };
 		FA20294E2C3D1F800076F28C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294D2C3D1F800076F28C /* SceneDelegate.swift */; };
 		FA2029502C3D1F800076F28C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294F2C3D1F800076F28C /* ViewController.swift */; };
@@ -64,6 +65,8 @@
 		0529EA082C466018003B0B11 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		0529EA0A2C466028003B0B11 /* HumidityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityView.swift; sourceTree = "<group>"; };
 		1D84C7EB2C4523AD0072C488 /* PotentialWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialWindow.swift; sourceTree = "<group>"; };
+		1D84C7F12C47BF8F0072C488 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		1D84C7F32C47C02C0072C488 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA2029482C3D1F800076F28C /* WeatherMama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA20294B2C3D1F800076F28C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA20294D2C3D1F800076F28C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 				FA2029542C3D1F820076F28C /* Assets.xcassets */,
 				FA2029562C3D1F820076F28C /* LaunchScreen.storyboard */,
 				FA2029592C3D1F820076F28C /* Info.plist */,
+				1D84C7F12C47BF8F0072C488 /* Localizable.xcstrings */,
 			);
 			path = WeatherMama;
 			sourceTree = "<group>";
@@ -321,6 +325,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = FA20293F2C3D1F800076F28C;
 			productRefGroup = FA2029492C3D1F800076F28C /* Products */;
@@ -340,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2029552C3D1F820076F28C /* Assets.xcassets in Resources */,
+				1D84C7F22C47BF8F0072C488 /* Localizable.xcstrings in Resources */,
 				FA35D3522C466648001805BB /* SF-Pro-Rounded-Regular.otf in Resources */,
 				FA35D3532C466648001805BB /* SF-Pro-Rounded-Bold.otf in Resources */,
 				FA2029582C3D1F820076F28C /* Base in Resources */,
@@ -425,6 +431,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA2029572C3D1F820076F28C /* Base */,
+				1D84C7F32C47C02C0072C488 /* id */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -437,6 +444,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -500,6 +508,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -560,7 +569,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SW32R8WLA2;
+				DEVELOPMENT_TEAM = U5KP497GN3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMama/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Izin akses location bang";
@@ -577,7 +586,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iosda.WeatherMama;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iosda.WeatherMama-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -595,7 +604,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SW32R8WLA2;
+				DEVELOPMENT_TEAM = U5KP497GN3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMama/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Izin akses location bang";
@@ -612,7 +621,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iosda.WeatherMama;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iosda.WeatherMama-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

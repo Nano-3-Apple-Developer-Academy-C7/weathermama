@@ -20,7 +20,7 @@ class TopContainerView: UIView {
     
     private lazy var todayLabel: UILabel = {
         let todayLabel = UILabel()
-        todayLabel.text = "TODAY"
+        todayLabel.text = NSLocalizedString("TODAY", comment: "TODAY")
         todayLabel.textColor = .black
         todayLabel.font = UIFont(name: "SFProRounded-Bold", size: 20.0)
         todayLabel.textAlignment = .center
@@ -31,7 +31,7 @@ class TopContainerView: UIView {
     
     private lazy var recomendationLabel: UILabel = {
         let recomendationLabel = UILabel()
-        recomendationLabel.text = "Perfect day to dry your clothes!"
+        recomendationLabel.text = NSLocalizedString("Perfect day to dry your clothes!", comment: "Perfect day to dry your clothes!")
         recomendationLabel.textColor = .black
         recomendationLabel.font = UIFont(name: "SFProRounded-Regular", size: 32.0)
         recomendationLabel.numberOfLines = 0
@@ -52,7 +52,7 @@ class TopContainerView: UIView {
     }
     
     func setRecomendationLabel(_ text: String) {
-        recomendationLabel.text = text
+        recomendationLabel.text = NSLocalizedString(text, comment: text)
     }
 }
 

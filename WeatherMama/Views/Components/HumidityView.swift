@@ -33,7 +33,7 @@ class HumidityView: UIView {
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
         
         let titleLabel = UILabel()
-        titleLabel.text = "WIND"
+        titleLabel.text = NSLocalizedString("HUMIDITY", comment: "HUMIDITY")
         titleLabel.font = UIFont(name: "SFProRounded-Regular", size: 12)
         titleLabel.textColor = .secondaryLabel
         titleLabel.textAlignment = .center

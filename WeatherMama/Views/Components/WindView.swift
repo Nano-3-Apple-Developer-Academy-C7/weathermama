@@ -33,7 +33,7 @@ class WindView: UIView {
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
         
         let titleLabel = UILabel()
-        titleLabel.text = "WIND"
+        titleLabel.text = NSLocalizedString("WIND", comment: "WIND")
         titleLabel.font = UIFont(name: "SFProRounded-Regular", size: 12)
         titleLabel.textColor = .secondaryLabel
         titleLabel.textAlignment = .center

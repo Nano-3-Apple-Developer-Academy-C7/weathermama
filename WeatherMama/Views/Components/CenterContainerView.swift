@@ -19,7 +19,7 @@ class CenterContainerView: UIView {
     
     private lazy var bestLaundryTLabel: UILabel = {
         let bestLaundryTLabel = UILabel()
-        bestLaundryTLabel.text = "BEST TIME:"
+        bestLaundryTLabel.text = NSLocalizedString("BEST TIME:", comment: "BEST TIME:")
         bestLaundryTLabel.textColor = .secondaryLabel
         bestLaundryTLabel.font = UIFont(name: "SFProRounded-Regular", size: 16)
         bestLaundryTLabel.textAlignment = .center
@@ -41,7 +41,7 @@ class CenterContainerView: UIView {
     
     private lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.text = "OPTIMAL CONDITIONS FOR QUICK DRYING!"
+        descriptionLabel.text = NSLocalizedString("OPTIMAL CONDITIONS FOR QUICK DRYING!", comment: "OPTIMAL CONDITIONS FOR QUICK DRYING!")
         descriptionLabel.textColor = .secondaryLabel
         descriptionLabel.font = UIFont(name: "SFProRounded-Regular", size: 16)
         descriptionLabel.textAlignment = .center

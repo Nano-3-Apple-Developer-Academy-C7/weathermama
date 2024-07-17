@@ -74,7 +74,7 @@ extension MainViewController {
                             }
                             
                         } else {
-                            self.centerContainerView.setDescriptionLabel("Hari ini akan terus hujan")
+                            self.centerContainerView.setDescriptionLabel("IT WILL RAIN ALL DAY...")
                         }
                     }
                     let calendar = Calendar.current

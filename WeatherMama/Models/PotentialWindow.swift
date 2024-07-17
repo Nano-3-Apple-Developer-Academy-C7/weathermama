@@ -11,4 +11,5 @@ import WeatherKit
 struct PotentialWindow {
     let startTime: Date
     let endTime: Date
+    let duration: TimeInterval
 }

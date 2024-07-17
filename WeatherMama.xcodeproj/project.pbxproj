@@ -22,15 +22,16 @@
 		FA20294C2C3D1F800076F28C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294B2C3D1F800076F28C /* AppDelegate.swift */; };
 		FA20294E2C3D1F800076F28C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294D2C3D1F800076F28C /* SceneDelegate.swift */; };
 		FA2029502C3D1F800076F28C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294F2C3D1F800076F28C /* ViewController.swift */; };
-		FA2029532C3D1F800076F28C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FA2029522C3D1F800076F28C /* Base */; };
 		FA2029552C3D1F820076F28C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2029542C3D1F820076F28C /* Assets.xcassets */; };
 		FA2029582C3D1F820076F28C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FA2029572C3D1F820076F28C /* Base */; };
 		FA2029632C3D1F820076F28C /* WeatherMamaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2029622C3D1F820076F28C /* WeatherMamaTests.swift */; };
 		FA20296D2C3D1F820076F28C /* WeatherMamaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20296C2C3D1F820076F28C /* WeatherMamaUITests.swift */; };
 		FA20296F2C3D1F820076F28C /* WeatherMamaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20296E2C3D1F820076F28C /* WeatherMamaUITestsLaunchTests.swift */; };
 		FA35D3452C44D3C0001805BB /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D3442C44D3BC001805BB /* HourlyWeather.swift */; };
-		FA35D3472C44D3D7001805BB /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D3462C44D3D3001805BB /* WeatherViewController.swift */; };
+		FA35D3472C44D3D7001805BB /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D3462C44D3D3001805BB /* WeatherViewModel.swift */; };
 		FA35D3492C44D3F0001805BB /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D3482C44D3EC001805BB /* WeatherFetcher.swift */; };
+		FA35D3522C466648001805BB /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA35D3512C466648001805BB /* SF-Pro-Rounded-Regular.otf */; };
+		FA35D3532C466648001805BB /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA35D3502C466648001805BB /* SF-Pro-Rounded-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,6 @@
 		FA20294B2C3D1F800076F28C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA20294D2C3D1F800076F28C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA20294F2C3D1F800076F28C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA2029522C3D1F800076F28C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA2029542C3D1F820076F28C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA2029572C3D1F820076F28C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA2029592C3D1F820076F28C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,8 +77,12 @@
 		FA20296C2C3D1F820076F28C /* WeatherMamaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMamaUITests.swift; sourceTree = "<group>"; };
 		FA20296E2C3D1F820076F28C /* WeatherMamaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMamaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA35D3442C44D3BC001805BB /* HourlyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeather.swift; sourceTree = "<group>"; };
-		FA35D3462C44D3D3001805BB /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		FA35D3462C44D3D3001805BB /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		FA35D3482C44D3EC001805BB /* WeatherFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
+		FA35D3502C466648001805BB /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		FA35D3512C466648001805BB /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		FA35D3542C4678CC001805BB /* WeatherMama.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherMama.entitlements; sourceTree = "<group>"; };
+		FA35D3552C467FFB001805BB /* WeatherMamaRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherMamaRelease.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,13 +110,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0529E9F42C465E9C003B0B11 /* View */ = {
+		0529E9F42C465E9C003B0B11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				0529E9F72C465ECC003B0B11 /* Components */,
 				0529E9F52C465EC3003B0B11 /* MainViewController.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0529E9F72C465ECC003B0B11 /* Components */ = {
@@ -155,16 +159,16 @@
 		FA20294A2C3D1F800076F28C /* WeatherMama */ = {
 			isa = PBXGroup;
 			children = (
+				FA35D3552C467FFB001805BB /* WeatherMamaRelease.entitlements */,
+				FA35D3542C4678CC001805BB /* WeatherMama.entitlements */,
+				FA35D34E2C466634001805BB /* Assets */,
 				FA35D3432C44D3A9001805BB /* Service */,
-				FA35D3422C44D3A2001805BB /* Controllers */,
 				FA35D3412C44D38E001805BB /* ViewModels */,
-				FA35D3402C44D38A001805BB /* Views */,
+				0529E9F42C465E9C003B0B11 /* Views */,
 				FA35D33F2C44D37B001805BB /* Models */,
 				FA20294B2C3D1F800076F28C /* AppDelegate.swift */,
 				FA20294D2C3D1F800076F28C /* SceneDelegate.swift */,
 				FA20294F2C3D1F800076F28C /* ViewController.swift */,
-				FA2029512C3D1F800076F28C /* Main.storyboard */,
-				0529E9F42C465E9C003B0B11 /* View */,
 				FA2029542C3D1F820076F28C /* Assets.xcassets */,
 				FA2029562C3D1F820076F28C /* LaunchScreen.storyboard */,
 				FA2029592C3D1F820076F28C /* Info.plist */,
@@ -198,26 +202,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FA35D3402C44D38A001805BB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		FA35D3412C44D38E001805BB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FA35D3462C44D3D3001805BB /* WeatherViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		FA35D3422C44D3A2001805BB /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FA35D3462C44D3D3001805BB /* WeatherViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FA35D3432C44D3A9001805BB /* Service */ = {
@@ -226,6 +216,23 @@
 				FA35D3482C44D3EC001805BB /* WeatherFetcher.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FA35D34E2C466634001805BB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FA35D34F2C46663C001805BB /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FA35D34F2C46663C001805BB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA35D3502C466648001805BB /* SF-Pro-Rounded-Bold.otf */,
+				FA35D3512C466648001805BB /* SF-Pro-Rounded-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2029552C3D1F820076F28C /* Assets.xcassets in Resources */,
+				FA35D3522C466648001805BB /* SF-Pro-Rounded-Regular.otf in Resources */,
+				FA35D3532C466648001805BB /* SF-Pro-Rounded-Bold.otf in Resources */,
 				FA2029582C3D1F820076F28C /* Base in Resources */,
-				FA2029532C3D1F800076F28C /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +375,7 @@
 				0529EA012C465FE0003B0B11 /* ClockCollectionViewCell.swift in Sources */,
 				0529EA072C46600B003B0B11 /* TemperatureView.swift in Sources */,
 				FA35D3492C44D3F0001805BB /* WeatherFetcher.swift in Sources */,
-				FA35D3472C44D3D7001805BB /* WeatherViewController.swift in Sources */,
+				FA35D3472C44D3D7001805BB /* WeatherViewModel.swift in Sources */,
 				1D84C7EC2C4523AD0072C488 /* PotentialWindow.swift in Sources */,
 				FA35D3452C44D3C0001805BB /* HourlyWeather.swift in Sources */,
 				FA20294C2C3D1F800076F28C /* AppDelegate.swift in Sources */,
@@ -413,14 +421,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FA2029512C3D1F800076F28C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA2029522C3D1F800076F28C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA2029562C3D1F820076F28C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -556,15 +556,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeatherMama/WeatherMama.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SW32R8WLA2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMama/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Izin akses location bang";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Izin akses location bang";
+				INFOPLIST_KEY_NSLocationUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -575,6 +579,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iosda.WeatherMama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,15 +591,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeatherMama/WeatherMamaRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SW32R8WLA2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMama/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Izin akses location bang";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Izin akses location bang";
+				INFOPLIST_KEY_NSLocationUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -605,6 +614,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iosda.WeatherMama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

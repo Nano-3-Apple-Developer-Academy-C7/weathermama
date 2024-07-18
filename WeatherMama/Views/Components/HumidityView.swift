@@ -15,7 +15,7 @@ class HumidityView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 12
+        stackView.spacing = 10
         
         return stackView
     }()
@@ -51,7 +51,7 @@ class HumidityView: UIView {
         let humidityRateLabel = UILabel()
         humidityRateLabel.text = "35%"
         humidityRateLabel.font = UIFont(name: "SFProRounded-Regular", size: 20)
-        humidityRateLabel.textColor = .black
+        humidityRateLabel.textColor = .label
         humidityRateLabel.textAlignment = .center
         humidityRateLabel.translatesAutoresizingMaskIntoConstraints = false
         

@@ -12,18 +12,6 @@ class ClockCollectionViewCell: UICollectionViewCell {
     var clockView: ClockWithSymbolView?
     private var bottomBorderView: UIView?
     
-    var hour: Int = 0 {
-        didSet {
-            updateSelectionState()
-        }
-    }
-    
-    var currentHour: Int = 0 {
-        didSet {
-            updateSelectionState()
-        }
-    }
-    
     override var isSelected: Bool {
         didSet {
             updateSelectionState()
@@ -45,7 +33,7 @@ private extension ClockCollectionViewCell {
     private func updateSelectionState() {
         bottomBorderView?.removeFromSuperview()
         
-        if isSelected && hour == currentHour {
+        if isSelected {
             // Apply bottom border with desired properties to indicate selection
             let borderWidth: CGFloat = 1.0
             let borderColor: UIColor = .wmGray
@@ -57,17 +45,21 @@ private extension ClockCollectionViewCell {
             bottomBorderView?.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 bottomBorderView!.heightAnchor.constraint(equalToConstant: borderWidth),
-                bottomBorderView!.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 95),
-                bottomBorderView!.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-                bottomBorderView!.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+                bottomBorderView!.topAnchor.constraint(equalTo: clockView!.bottomAnchor, constant: 10),
+                bottomBorderView!.widthAnchor.constraint(equalToConstant: 45),
+                bottomBorderView!.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
             ])
-            
-            // Adjust contentView's frame to maintain the specified size
-            self.contentView.frame = CGRect(x: self.contentView.frame.origin.x, y: self.contentView.frame.origin.y, width: 49, height: 101)
         }
     }
     
     private func clockSetup() {
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            self.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+        ])
+        
         guard clockView == nil else { return }
         
         clockView = ClockWithSymbolView()
@@ -76,10 +68,11 @@ private extension ClockCollectionViewCell {
         self.contentView.addSubview(clockView!)
         
         NSLayoutConstraint.activate([
-            clockView!.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            clockView!.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            clockView!.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            clockView!.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            clockView!.widthAnchor.constraint(equalToConstant: 28),
+            clockView!.heightAnchor.constraint(equalToConstant: 90),
+            
+            clockView!.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8.5),
+            clockView!.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8.5),
         ])
     }
 }

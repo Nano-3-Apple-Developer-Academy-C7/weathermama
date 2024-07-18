@@ -30,9 +30,13 @@ class BackgroundImageContainerView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setBackgroundImage(image: UIImage?) {
+        backgroundImage.image = image
+    }
 }
 
-private extension BackgroundImageContainerView {
+private extension BackgroundImageContainerView {    
     private func setupBackgroundImage() {
         self.translatesAutoresizingMaskIntoConstraints = false
         

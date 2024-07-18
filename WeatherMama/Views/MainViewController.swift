@@ -9,8 +9,6 @@ import UIKit
 import CoreLocation
 
 class MainViewController: UIViewController, CLLocationManagerDelegate {
-    // SCROLL VIEW
-    
     let weatherFetcher = WeatherFetcher()
     let locationManager = CLLocationManager()
     
@@ -30,7 +28,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }()
     
     // OTHER VIEW
-    private lazy var backgroundImageContainerView: BackgroundImageContainerView = {
+    lazy var backgroundImageContainerView: BackgroundImageContainerView = {
         let view = BackgroundImageContainerView()
         return view
     }()
@@ -129,7 +127,7 @@ private extension MainViewController {
         NSLayoutConstraint.activate([
             mainBoxContainerView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
-            mainBoxContainerView.topAnchor.constraint(equalTo: centerContainerView.bottomAnchor, constant: 48),
+            mainBoxContainerView.topAnchor.constraint(equalTo: centerContainerView.bottomAnchor, constant: 30),
             mainBoxContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -35),
         ])
     }

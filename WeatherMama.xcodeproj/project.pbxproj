@@ -18,6 +18,8 @@
 		0529EA072C46600B003B0B11 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529EA062C46600B003B0B11 /* TemperatureView.swift */; };
 		0529EA092C466018003B0B11 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529EA082C466018003B0B11 /* WindView.swift */; };
 		0529EA0B2C466028003B0B11 /* HumidityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529EA0A2C466028003B0B11 /* HumidityView.swift */; };
+		0529EA122C4865ED003B0B11 /* MainBoxContainerView+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529EA112C4865ED003B0B11 /* MainBoxContainerView+UICollectionView.swift */; };
+		0529EA142C486D70003B0B11 /* SunEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529EA132C486D70003B0B11 /* SunEventModel.swift */; };
 		1D84C7EC2C4523AD0072C488 /* PotentialWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84C7EB2C4523AD0072C488 /* PotentialWindow.swift */; };
 		1D84C7F22C47BF8F0072C488 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1D84C7F12C47BF8F0072C488 /* Localizable.xcstrings */; };
 		FA20294C2C3D1F800076F28C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20294B2C3D1F800076F28C /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		0529EA062C46600B003B0B11 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		0529EA082C466018003B0B11 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		0529EA0A2C466028003B0B11 /* HumidityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityView.swift; sourceTree = "<group>"; };
+		0529EA112C4865ED003B0B11 /* MainBoxContainerView+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainBoxContainerView+UICollectionView.swift"; sourceTree = "<group>"; };
+		0529EA132C486D70003B0B11 /* SunEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunEventModel.swift; sourceTree = "<group>"; };
 		1D84C7EB2C4523AD0072C488 /* PotentialWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialWindow.swift; sourceTree = "<group>"; };
 		1D84C7F12C47BF8F0072C488 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1D84C7F32C47C02C0072C488 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -125,10 +129,11 @@
 		0529E9F72C465ECC003B0B11 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0529E9FE2C465FCA003B0B11 /* BackgroundImageContainerView.swift */,
 				0529E9F82C465EE9003B0B11 /* TopContainerView.swift */,
 				0529E9FA2C465F1B003B0B11 /* CenterContainerView.swift */,
 				0529E9FC2C465F7E003B0B11 /* MainBoxContainerView.swift */,
-				0529E9FE2C465FCA003B0B11 /* BackgroundImageContainerView.swift */,
+				0529EA112C4865ED003B0B11 /* MainBoxContainerView+UICollectionView.swift */,
 				0529EA002C465FE0003B0B11 /* ClockCollectionViewCell.swift */,
 				0529EA022C465FEF003B0B11 /* ClockWithSymbolView.swift */,
 				0529EA042C465FFF003B0B11 /* PrecipitationView.swift */,
@@ -202,6 +207,7 @@
 			children = (
 				FA35D3442C44D3BC001805BB /* HourlyWeather.swift */,
 				1D84C7EB2C4523AD0072C488 /* PotentialWindow.swift */,
+				0529EA132C486D70003B0B11 /* SunEventModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,11 +386,13 @@
 				FA2029502C3D1F800076F28C /* ViewController.swift in Sources */,
 				0529EA012C465FE0003B0B11 /* ClockCollectionViewCell.swift in Sources */,
 				0529EA072C46600B003B0B11 /* TemperatureView.swift in Sources */,
+				0529EA142C486D70003B0B11 /* SunEventModel.swift in Sources */,
 				FA35D3492C44D3F0001805BB /* WeatherFetcher.swift in Sources */,
 				FA35D3472C44D3D7001805BB /* WeatherViewModel.swift in Sources */,
 				1D84C7EC2C4523AD0072C488 /* PotentialWindow.swift in Sources */,
 				FA35D3452C44D3C0001805BB /* HourlyWeather.swift in Sources */,
 				FA20294C2C3D1F800076F28C /* AppDelegate.swift in Sources */,
+				0529EA122C4865ED003B0B11 /* MainBoxContainerView+UICollectionView.swift in Sources */,
 				0529E9FB2C465F1B003B0B11 /* CenterContainerView.swift in Sources */,
 				FA20294E2C3D1F800076F28C /* SceneDelegate.swift in Sources */,
 				0529EA052C465FFF003B0B11 /* PrecipitationView.swift in Sources */,
@@ -569,13 +577,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U5KP497GN3;
+				DEVELOPMENT_TEAM = AD6RKLU932;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMama/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Izin akses location bang";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Izin akses location bang";
 				INFOPLIST_KEY_NSLocationUsageDescription = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Izin akses location bang";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -586,7 +594,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iosda.WeatherMama-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosda.WeatherMamas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -604,13 +612,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U5KP497GN3;
+				DEVELOPMENT_TEAM = AD6RKLU932;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherMama/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Izin akses location bang";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Izin akses location bang";
 				INFOPLIST_KEY_NSLocationUsageDescription = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Izin akses location bang";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -621,7 +629,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iosda.WeatherMama-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosda.WeatherMamas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

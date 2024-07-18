@@ -51,7 +51,7 @@ class TemperatureView: UIView {
         let temperatureRateLabel = UILabel()
         temperatureRateLabel.text = "32°"
         temperatureRateLabel.font = UIFont(name: "SFProRounded-Regular", size: 20)
-        temperatureRateLabel.textColor = .black
+        temperatureRateLabel.textColor = .label
         temperatureRateLabel.textAlignment = .center
         temperatureRateLabel.translatesAutoresizingMaskIntoConstraints = false
         

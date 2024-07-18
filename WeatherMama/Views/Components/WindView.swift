@@ -51,7 +51,7 @@ class WindView: UIView {
         let windRateLabel = UILabel()
         windRateLabel.text = "119 km/h"
         windRateLabel.font = UIFont(name: "SFProRounded-Regular", size: 20)
-        windRateLabel.textColor = .black
+        windRateLabel.textColor = .label
         windRateLabel.textAlignment = .center
         windRateLabel.translatesAutoresizingMaskIntoConstraints = false
         

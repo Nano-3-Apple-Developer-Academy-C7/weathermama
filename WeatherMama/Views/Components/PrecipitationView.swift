@@ -50,7 +50,7 @@ class PrecipitationView: UIView {
         let precipitationRateLabel = UILabel()
         precipitationRateLabel.text = "15%"
         precipitationRateLabel.font = UIFont(name: "SFProRounded-Regular", size: 20)
-        precipitationRateLabel.textColor = .black
+        precipitationRateLabel.textColor = .label
         precipitationRateLabel.textAlignment = .center
         precipitationRateLabel.translatesAutoresizingMaskIntoConstraints = false
         

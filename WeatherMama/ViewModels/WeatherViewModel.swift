@@ -26,13 +26,24 @@ extension MainViewController {
             case .success(let hourlyWeatherData):
                 let potentialWindow = self.recommendLaundryTimes(hourlyForecast: hourlyWeatherData)
                 self.recommendationTimes = self.recommendLaundryTimes(hourlyForecast: hourlyWeatherData)
-                print(potentialWindow[0])
-                print(hourlyWeatherData)
+                //print(potentialWindow[0])
                 self.mainBoxContainerView.hourlyWeatherData = hourlyWeatherData
+                
+                if let startTime = potentialWindow.first?.startTime,
+                   let endTime = potentialWindow.first?.endTime {
+                    
+                    let calendar = Calendar.current
+                    let startHour = calendar.component(.hour, from: startTime)
+                    let endHour = calendar.component(.hour, from: endTime)
+                    
+                    self.mainBoxContainerView.startHour = startHour
+                    self.mainBoxContainerView.endHour = endHour
+                }
+                
                 DispatchQueue.main.async {
                     if potentialWindow[0].duration >= 10800 {
                         self.topContainerView.setRecomendationLabel("Perfect day to dry your clothes")
-                        self.centerContainerView.setDescriptionLabel("Optimal Condition for Quick Drying")
+                        self.centerContainerView.setDescriptionLabel("OPTIMAL CONDITIONS FOR QUICK DRYING!")
                         
                         let calendar = Calendar.current
 
@@ -50,7 +61,7 @@ extension MainViewController {
                         self.centerContainerView.setBestTimeLabel(midpointTimeString)
                         
                     } else {
-                        self.topContainerView.setRecomendationLabel("Not the best day to dry your clothes")
+                        self.topContainerView.setRecomendationLabel("Not the best day to dry your clothes...")
                         
                         if potentialWindow.count > 1 {
                             self.centerContainerView.setDescriptionLabel("THE SUN’S OUT AGAIN!")
@@ -81,12 +92,11 @@ extension MainViewController {
                     
                     let currentHour = calendar.component(.hour, from: Date())
                     
-                    
                     if self.mainBoxContainerView.indexHour == -1 {
-                        self.mainBoxContainerView.humidityView.setHumidityRateLabel("\(hourlyWeatherData[currentHour].humidity * 100) %")
-                        self.mainBoxContainerView.windView.setWindRateLabel("\(hourlyWeatherData[currentHour].windSpeed) Km/H")
-                        self.mainBoxContainerView.temperatureView.setTemperatureRateLabel("\(hourlyWeatherData[currentHour].temperature) °")
-                        self.mainBoxContainerView.precipitationView.setPrecipitationRateLabel("\(hourlyWeatherData[currentHour].precipitationChance * 100) %")
+                        self.mainBoxContainerView.humidityView.setHumidityRateLabel(String(format: "%.0f %%", hourlyWeatherData[currentHour].humidity * 100))
+                        self.mainBoxContainerView.windView.setWindRateLabel(String(format: "%.0f Km/H", hourlyWeatherData[currentHour].windSpeed))
+                        self.mainBoxContainerView.temperatureView.setTemperatureRateLabel(String(format: "%.0f °", hourlyWeatherData[currentHour].temperature))
+                        self.mainBoxContainerView.precipitationView.setPrecipitationRateLabel(String(format: "%.0f %%", hourlyWeatherData[currentHour].precipitationChance * 100))
                         self.mainBoxContainerView.precipitationView.setPrecipitationStatusLabel("\(hourlyWeatherData[currentHour].precipitationCategory())")
                     }
                 }
@@ -131,12 +141,48 @@ extension MainViewController {
         
         return recommendations
     }
-
+    
+    func fetchSunriseAndSunset(for location: CLLocation) {
+        weatherFetcher.fetchSunriseAndSunset(for: location) { result in
+            switch result {
+            case .success(let sunEvents):
+                let sunrise = sunEvents.sunrise
+                let sunset = sunEvents.sunset
+                
+                let calendar = Calendar.current
+                let sunriseHour = calendar.component(.hour, from: sunrise)
+                let sunsetHour = calendar.component(.hour, from: sunset)
+                
+                var currentHour = calendar.component(.hour, from: Date())
+                
+                if currentHour == 0 {
+                    currentHour = 24
+                }
+                
+                self.mainBoxContainerView.sunriseHour = sunriseHour
+                self.mainBoxContainerView.sunsetHour = sunsetHour
+                
+                DispatchQueue.main.async {                    
+                    if currentHour < sunriseHour || currentHour >= sunsetHour {
+                        self.backgroundImageContainerView.setBackgroundImage(image: UIImage(named: "night"))
+                    } else {
+                        self.backgroundImageContainerView.setBackgroundImage(image: UIImage(named: "bright"))
+                    }
+                }
+                
+            case .failure(let error):
+                // Handle error
+                print("Failed to fetch sunrise and sunset: \(error.localizedDescription)")
+            }
+        }
+    }
     
     // CLLocationManagerDelegate methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-             fetchWeather(for: location)
+            fetchSunriseAndSunset(for: location)
+            
+            fetchWeather(for: location)
         }
     }
     

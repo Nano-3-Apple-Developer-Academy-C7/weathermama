@@ -12,8 +12,9 @@ class ClockWithSymbolView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 24
-        stackView.alignment = .center
+        stackView.spacing = 35
+        stackView.alignment = .fill
+        
         return stackView
     }()
     
@@ -21,9 +22,10 @@ class ClockWithSymbolView: UIView {
         let hourLabel = UILabel()
         hourLabel.text = "1"
         hourLabel.font = UIFont(name: "SFProRounded-Regular", size: 14)
-        hourLabel.textColor = .black
+        hourLabel.textColor = .label
         hourLabel.textAlignment = .center
         hourLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         return hourLabel
     }()
     
@@ -33,7 +35,8 @@ class ClockWithSymbolView: UIView {
         
         let symbolView = UIImageView(image: symbolImage)
         symbolView.tintColor = .orange
-        symbolView.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        symbolView.contentMode = .scaleAspectFit
+        symbolView.frame = CGRect(x: 0, y: 0, width: 28, height: 27)
         
         return symbolView
     }()
@@ -76,13 +79,20 @@ private extension ClockWithSymbolView {
         
         self.addSubview(clockStackView)
         
+        NSLayoutConstraint.activate([
+            clockStackView.widthAnchor.constraint(equalToConstant: 28),
+        ])
+        
         clockStackView.addArrangedSubview(hourLabel)
+        
+        NSLayoutConstraint.activate([
+            hourLabel.heightAnchor.constraint(equalToConstant: 13),
+        ])
+        
         clockStackView.addArrangedSubview(symbolView)
         
         NSLayoutConstraint.activate([
-            clockStackView.topAnchor.constraint(equalTo: self.topAnchor),
-            clockStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            clockStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            symbolView.heightAnchor.constraint(equalToConstant: 27),
         ])
     }
 }

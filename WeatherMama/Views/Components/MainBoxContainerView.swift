@@ -8,23 +8,31 @@
 import UIKit
 
 class MainBoxContainerView: UIView {
+        
+    var hourlyWeatherData: [HourlyWeatherData] = []
     
-    private var currentHour: Int = 0 {
+    var indexHour = -1
+    
+    var startHour = 0
+    var endHour = 0
+    
+    var sunriseHour = 0
+    var sunsetHour = 0
+    
+    var currentHour: Int = 0 {
         didSet {
             DispatchQueue.main.async {
                 self.clockGridContainerView.reloadData()
+                self.scrollToCurrentHour()
             }
         }
     }
     
-    var hourlyWeatherData: [HourlyWeatherData] = []
-    var indexHour = -1
-    
     private lazy var clockGridContainerView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 29
-        layout.itemSize = .init(width: 28, height: 101)
+        layout.minimumLineSpacing = 12
+        layout.itemSize = CGSize(width: 45, height: 101)
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = .clear
@@ -71,7 +79,7 @@ class MainBoxContainerView: UIView {
     
     private lazy var firstLineView: UIView = {
         let firstLineView = UIView()
-        firstLineView.backgroundColor = .opaqueSeparator
+        firstLineView.backgroundColor = .wmLineColors
         firstLineView.layer.cornerRadius = 1
         firstLineView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -80,7 +88,7 @@ class MainBoxContainerView: UIView {
     
     private lazy var secondLineView: UIView = {
         let secondLineView = UIView()
-        secondLineView.backgroundColor = .opaqueSeparator
+        secondLineView.backgroundColor = .wmLineColors
         secondLineView.layer.cornerRadius = 1
         secondLineView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -89,7 +97,7 @@ class MainBoxContainerView: UIView {
     
     private lazy var thirdLineView: UIView = {
         let thirdLineView = UIView()
-        thirdLineView.backgroundColor = .opaqueSeparator
+        thirdLineView.backgroundColor = .wmLineColors
         thirdLineView.layer.cornerRadius = 1
         thirdLineView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -98,7 +106,7 @@ class MainBoxContainerView: UIView {
     
     private lazy var firstVerticalLineView: UIView = {
         let firstVerticalLineView = UIView()
-        firstVerticalLineView.backgroundColor = .opaqueSeparator
+        firstVerticalLineView.backgroundColor = .wmLineColors
         firstVerticalLineView.layer.cornerRadius = 1
         firstVerticalLineView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -107,7 +115,7 @@ class MainBoxContainerView: UIView {
     
     private lazy var secondVerticalLineView: UIView = {
         let secondVerticalLineView = UIView()
-        secondVerticalLineView.backgroundColor = .opaqueSeparator
+        secondVerticalLineView.backgroundColor = .wmLineColors
         secondVerticalLineView.layer.cornerRadius = 1
         secondVerticalLineView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -145,7 +153,11 @@ class MainBoxContainerView: UIView {
         
         setupMainBox()
         setCurrentHour()
-        scrollToCurrentHour()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.clockGridContainerView.reloadData()
+            self.scrollToCurrentHour()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -154,31 +166,6 @@ class MainBoxContainerView: UIView {
 }
 
 private extension MainBoxContainerView {
-    private func setCurrentHour() {
-        // Implement logic to set currentHour
-        let calendar = Calendar.current
-        currentHour = calendar.component(.hour, from: Date())
-        
-        // Adjust currentHour if necessary
-        if currentHour == 0 {
-            currentHour = 24
-        }
-    }
-    
-    private func scrollToCurrentHour() {
-        let indexPath = IndexPath(item: currentHour - 1, section: 0)
-        
-        DispatchQueue.main.async {
-            self.clockGridContainerView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            
-            self.clockGridContainerView.selectItem(at: indexPath, animated: false, scrollPosition: [])
-            
-            if let cell = self.clockGridContainerView.cellForItem(at: indexPath) as? ClockCollectionViewCell {
-                cell.isSelected = true
-            }
-        }
-    }
-    
     private func setupMainBox() {
         self.backgroundColor = UIColor.wmBoxColors
         self.layer.cornerRadius = 20
@@ -305,74 +292,28 @@ private extension MainBoxContainerView {
             humidityView.heightAnchor.constraint(equalToConstant: 71),
         ])
     }
-}
-
-
-extension MainBoxContainerView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 24
+    
+    private func setCurrentHour() {
+        let calendar = Calendar.current
+        self.currentHour = calendar.component(.hour, from: Date())
+        
+        if self.currentHour == 0 {
+            self.currentHour = 24
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClockCollectionViewCell", for: indexPath) as! ClockCollectionViewCell
-        
-        let hour = indexPath.item
-        
-        cell.clockView?.setHour(hour + 1)
-
-        // Change color if the hour is less than the current hour
-        let calendar = Calendar.current
-        
-        let currentHour = calendar.component(.hour, from: Date())
-        
-        if hour < currentHour - 1 {
-            cell.clockView?.setHourColor(.gray)
-            cell.clockView?.setSymbolColor(.gray)
-            cell.isUserInteractionEnabled = false
-        } else {
-            cell.clockView?.setHourColor(.black)
-            cell.clockView?.setSymbolColor(.systemOrange)
-            cell.isUserInteractionEnabled = true
-        }
-        
-        return cell
-    }
-}
-
-extension MainBoxContainerView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let calendar = Calendar.current
-        
-        let currentHour = calendar.component(.hour, from: Date())
-        
-        if indexPath.item < currentHour - 1 {
-            return // Ignore selection if the hour is less than the current hour
-        }
-        
-        // Handle cell selection here
-        print("Selected hour:", indexPath.item + 1)
-        
-        indexHour = indexPath.item
+    private func scrollToCurrentHour() {
+        let indexPath = IndexPath(item: self.currentHour - 1, section: 0)
         
         DispatchQueue.main.async {
-            self.humidityView.setHumidityRateLabel("\(self.hourlyWeatherData[indexPath.item].humidity * 100) %")
-            self.windView.setWindRateLabel("\(self.hourlyWeatherData[indexPath.item].windSpeed) Km/H")
-            self.temperatureView.setTemperatureRateLabel("\(self.hourlyWeatherData[indexPath.item].temperature) °")
-            self.precipitationView.setPrecipitationRateLabel("\(self.hourlyWeatherData[indexPath.item].precipitationChance * 100) %")
-            self.precipitationView.setPrecipitationStatusLabel("\(self.hourlyWeatherData[indexPath.item].precipitationCategory())")
-        }
-        
-        // Update the appearance of the selected cell
-        if let cell = collectionView.cellForItem(at: indexPath) as? ClockCollectionViewCell {
-            cell.isSelected = true // This will trigger the cell's selection state update
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        // Deselect if needed
-        if let cell = collectionView.cellForItem(at: indexPath) as? ClockCollectionViewCell {
-            cell.isSelected = false
+            self.clockGridContainerView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            
+            self.clockGridContainerView.selectItem(at: indexPath, animated: false, scrollPosition: [])
+            
+            if let cell = self.clockGridContainerView.cellForItem(at: indexPath) as? ClockCollectionViewCell {
+                cell.isSelected = true
+            }
         }
     }
 }
+

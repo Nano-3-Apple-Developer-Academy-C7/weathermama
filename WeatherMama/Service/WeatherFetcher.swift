@@ -18,6 +18,7 @@ class WeatherFetcher {
         Task {
             do {
                 let weather = try await weatherService.weather(for: location)
+                
                 let calendar = Calendar.current
                 let currentDate = calendar.startOfDay(for: Date())
                 let endOfDay = calendar.date(byAdding: .day, value: 1, to: currentDate)!
@@ -39,6 +40,36 @@ class WeatherFetcher {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func fetchSunriseAndSunset(for location: CLLocation, completion: @escaping (Result<SunEventModel, Error>) -> Void) {
+        Task {
+            do {
+                let weather = try await weatherService.weather(for: location)
+                
+                let calendar = Calendar.current
+                let currentDate = calendar.startOfDay(for: Date())
+                
+                guard let todayWeather = weather.dailyForecast.first(where: { calendar.isDate($0.date, inSameDayAs: currentDate) }) else {
+                    throw WeatherFetchError.noDataAvailable
+                }
+                
+                guard let sunrise = todayWeather.sun.sunrise,
+                      let sunset = todayWeather.sun.sunset else {
+                    throw WeatherFetchError.missingData
+                }
+                
+                let sunEvent = SunEventModel(sunrise: sunrise, sunset: sunset)
+                completion(.success(sunEvent))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    enum WeatherFetchError: Error {
+        case noDataAvailable
+        case missingData
     }
 
 }
